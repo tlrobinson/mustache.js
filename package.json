@@ -1,5 +1,6 @@
 {
     "name": "mustache",
+    "lib" : "mustache-commonjs",
     "author": "Jan Lehnardt",
     "description": "{{mustaches}} in JavaScript — shameless port from @defunkt",
     "keywords": ["template"]

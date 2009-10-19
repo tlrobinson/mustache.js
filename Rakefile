@@ -15,11 +15,11 @@ end
 
 task :commonjs do
   print "Packaging for CommonJS\n"
-  target = "mustache-commonjs"
-  copy_distfiles(target);
-  `mkdir #{target}/lib`
-  `cp mustache.js #{target}/lib`
-  print "Done, see ./#{target}\n"
+  File.open(File.join("mustache-commonjs", "mustache.js"), "w") do |f|
+    f.puts "// This file is generated, edit mustache.js instead."
+    f.puts File.read("mustache.js")
+    f.puts "for (var prop in Mustache) exports[prop] = Mustache[prop];"
+  end
 end
 
 task :jquery do
