@@ -1,0 +1,4 @@
+
+for (var name in Mustache)
+    if (Object.prototype.hasOwnProperty.call(Mustache, name))
+        exports[name] = Mustache[name];

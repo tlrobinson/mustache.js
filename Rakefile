@@ -14,8 +14,10 @@ end
 
 task :commonjs do
   print "Packaging for CommonJS\n"
-  `mkdir lib`
-  `cp mustache.js lib/mustache.js`
+  source = "mustache-commonjs"
+  target = "lib/mustache.js"
+  `mkdir -p lib`
+  `cat #{source}/mustache.js.tpl.pre mustache.js #{source}/mustache.js.tpl.post > #{target}`
   print "Done.\n"
 end
 
